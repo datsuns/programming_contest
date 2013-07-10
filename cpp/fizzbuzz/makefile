@@ -2,9 +2,8 @@
 CC      = gcc
 CXX     = g++
 OBJS    = main.o fizzbuzz.o
-CCFLAGS = -std=c++11
+CCFLAGS = -std=c++11 -O2 -Werror -Wall
 
-# 生成規則部
 fizzbuzz.out: $(OBJS)
 	$(CXX) -o $@ $(OBJS)
 
@@ -16,6 +15,9 @@ fizzbuzz.out: $(OBJS)
 
 run:
 	./fizzbuzz.out
+
+calc:
+	./fizzbuzz.out 1
 
 clean:
 	rm fizzbuzz.out
